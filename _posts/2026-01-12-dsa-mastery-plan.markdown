@@ -22,11 +22,11 @@ published: false
 **Problems (15 total):**
 
 *Easy (10):*
-- [ ] Two Sum (LeetCode 1) - Hash table intro
-- [ ] Best Time to Buy and Sell Stock (121)
-- [ ] Remove Duplicates from Sorted Array (26)
+- [x] Two Sum (LeetCode 1) - Hash table intro
+- [x] Best Time to Buy and Sell Stock (121)
+- [x] Remove Duplicates from Sorted Array (26)
 - [ ] Merge Sorted Array (88)
-- [ ] Move Zeroes (283)
+- [x] Move Zeroes (283)
 - [ ] Squares of a Sorted Array (977)
 - [ ] Valid Palindrome (125)
 - [ ] Intersection of Two Arrays II (350)
