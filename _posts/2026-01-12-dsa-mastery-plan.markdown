@@ -25,11 +25,11 @@ published: false
 - [x] Two Sum (LeetCode 1) - Hash table intro
 - [x] Best Time to Buy and Sell Stock (121)
 - [x] Remove Duplicates from Sorted Array (26)
-- [ ] Merge Sorted Array (88)
+- [x] Merge Sorted Array (88)
 - [x] Move Zeroes (283)
-- [ ] Squares of a Sorted Array (977)
-- [ ] Valid Palindrome (125)
-- [ ] Intersection of Two Arrays II (350)
+- [x] Squares of a Sorted Array (977)
+- [x] Valid Palindrome (125)
+- [x] Intersection of Two Arrays II (350)
 - [ ] Plus One (66)
 - [ ] Majority Element (169)
 
@@ -37,7 +37,7 @@ published: false
 - [ ] Container With Most Water (11) - Two pointers
 - [ ] 3Sum (15) - Critical pattern
 - [ ] Sort Colors (75) - Dutch national flag
-- [ ] Product of Array Except Self (238)
+- [ ] Product of Array Except Self (238) - **NEEDS REVISION** (prefix/suffix pattern)
 - [ ] Subarray Sum Equals K (560) - Prefix sum
 
 **Daily Schedule:** 2 Easy (Mon-Fri), 1 Medium (Sat-Sun)
@@ -73,7 +73,7 @@ published: false
 - [ ] Longest Substring Without Repeating Characters (3) - **KEY**
 - [ ] Longest Repeating Character Replacement (424)
 - [ ] Minimum Window Substring (76) - **HARD but important**
-- [ ] Group Anagrams (49)
+- [x] Group Anagrams (49)
 - [ ] Longest Palindromic Substring (5)
 
 **Pattern Recognition:**
