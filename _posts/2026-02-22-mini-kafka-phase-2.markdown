@@ -5,22 +5,6 @@ date:   2026-02-22 14:00:00 +0800
 categories: projects distributed-systems kafka storage
 ---
 
-Intro — what Phase 1 left us with (REST broker), why Phase 2 matters (Kafka uses binary, not HTTP)
-
-The Protocol Design — length-prefix framing, the 6 message types, byte layout from ADR-0009. The off-by-4 bug as a concrete illustration of why protocol design precision matters.
-
-ByteBuffer Serialization — how you hand-rolled serialize/deserialize without Protobuf. The read/write pattern, flip() gotcha.
-
-
-
-
-
-
-
-
-
-What's Next — Phase 3: partitioning.
-
 ## Introduction
 
 In early February 2026, I shipped Phase 1 of the mini-Kafka project which is the stepping-stone upon which I want to work on and enrich until obtaining a project with very similar qualities/attributes as the real Kafka. We have developed a append-only log structured messaging system that could be access via REST API which was implemented in Java 25/Spring Boot 4. We did the REST API for speed-purposes to proof that our storage engine was working as expected. 
