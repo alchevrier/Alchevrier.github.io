@@ -3,6 +3,7 @@ layout: post
 title:  "The big picture"
 date:   2024-08-12 18:18:22 +0800
 categories: mindset
+published: false
 ---
 There is nothing more exciting than to get hands-on into the code and make things happen thinking we are going to add massive value to the company. 
 Then somewhere down the line, things went south and now it takes a massive amount of time to get something done. Everything is a hassle and regressions are happening systematically when refactoring. 

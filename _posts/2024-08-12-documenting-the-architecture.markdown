@@ -3,6 +3,7 @@ layout: post
 title:  "Documenting the architecture"
 date:   2024-08-12 18:18:22 +0800
 categories: software-engineering
+published: false
 ---
 One of the most painful things to do as a Software Engineer is to join a new job. At first, you are given an onboarding path that may or may not have been designed with the idea of making you successful in understanding how things run here. 
 

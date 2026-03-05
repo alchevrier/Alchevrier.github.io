@@ -3,6 +3,7 @@ layout: post
 title:  "The next level"
 date:   2024-08-15 07:00:00 +0800
 categories: software-engineering
+published: false
 ---
 This post won't be about how to improve your career as some people know more about this than me. 
 This post won't be about giving you the list of classes/books you should read.
