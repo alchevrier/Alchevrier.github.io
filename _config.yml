@@ -21,8 +21,8 @@
 title: Alex Chevrier - Software Engineer
 email: chevrier.alex@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Software Engineering from the point of view of a frenchman living in Hong-Kong.
-  Aspiring to be a CTO and helping other people making a difference in this world!
+  Software engineer building distributed systems from first principles. 
+  Currently implementing Kafka-like infrastructure in Java 25 — log storage, binary protocol, Raft consensus. Based in Hong Kong.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://alchevrier.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: alex-chevrier-323365b4
