@@ -19,7 +19,7 @@ p99.99: 306,000 ns
 p100: 40,000,000 ns
 That p100 — 40ms — was the first signal something was wrong. The second was JFR: GC evacuation pauses starting at 3ms and growing to 655ms over the benchmark run. Old gen growing without bound.
 
-[JFR screenshot: heap over time, Old gen growing](/assets/images/OriginalBenchmarkAppendTwo.png)
+![JFR screenshot: heap over time, Old gen growing](/assets/images/OriginalBenchmarkAppendTwo.png)
 
 # The diagnosis
 
@@ -29,7 +29,7 @@ ByteBuffer.allocate(4 + 8 + data.length) — a new buffer allocation per append,
 HashMap.put() — a new Map.Entry<Long, Long> per message indexed, both keys and values boxed
 At 1.5 million appends, that's 1.5 million ByteBuffer objects and 1.5 million Map.Entry objects flowing through Eden into Old gen. The GC had no chance. JFR's allocation sampler showed HeapByteBuffer, boxed Long, and HashMap$Node as the top three allocating classes — 1,800+ samples combined, all flowing into Old gen.
 
-[JFR screenshot: objectClass samples](/assets/images/ObjectClassSampleBaseline.png)
+![JFR screenshot: objectClass samples](/assets/images/ObjectClassSampleBaseline.png)
 
 # Step 1: MemorySegment header slab
 
@@ -37,7 +37,7 @@ Instead of allocating a new ByteBuffer per append, pre-allocate a 12-byte Memory
 
 Result: p99.99 345µs, p100 35ms, max GC pause 217ms — still growing, but slower. The Eden pressure eased. 
 
-[JFR screenshot: heap over time, Old gen growing less, Eden pressure erase](/assets/images/ReplacingByteBufferAllocateBenchmark.png)
+![JFR screenshot: heap over time, Old gen growing less, Eden pressure erase](/assets/images/ReplacingByteBufferAllocateBenchmark.png)
 
 # Step 2: Flat MemorySegment index
 
@@ -48,7 +48,7 @@ Result:
 p99.99: 70,519 ns (−77%)
 p100: 11,993,000 ns (−70%)
 Max GC pause: 2ms flat, no growth
-[JFR screenshot: heap over time, Old gen flat](/assets/images/ReplacingHashMapByMemorySlabBenchmark.png)
+![JFR screenshot: heap over time, Old gen flat](/assets/images/ReplacingHashMapByMemorySlabBenchmark.png)
 
 Old gen stable. The hypothesis was confirmed.
 
@@ -68,7 +68,7 @@ p50: 465 ns (−42% from read baseline)
 p99: 734 ns (−34%)
 p100: 718,848 ns (−42%)
 Max GC pause: 2ms flat
-[JFR screenshot: heap over time, Old gen flat](/assets/images/PoolingTopicNamePartitionBenchmark.png)
+![JFR screenshot: heap over time, Old gen flat](/assets/images/PoolingTopicNamePartitionBenchmark.png)
 
 # The lesson
 
